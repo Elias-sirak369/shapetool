@@ -16,7 +16,7 @@ public class ShapeEndpoint {
         double radius = request.getRadius();
 
         if (radius < 0) {
-            throw new RuntimeException("Radius cannot be negative");
+            throw new IllegalArgumentException("Radius cannot be negative");
         }
 
         CircleAreaResponse response = new CircleAreaResponse();
@@ -30,8 +30,14 @@ public class ShapeEndpoint {
     @ResponsePayload
     public SquareAreaResponse squareArea(@RequestPayload SquareAreaRequest request) {
 
+        double side = request.getSide();
+
+        if (side < 0) {
+            throw new IllegalArgumentException("Side cannot be negative");
+        }
+
         SquareAreaResponse response = new SquareAreaResponse();
-        response.setArea(request.getSide() * request.getSide());
+        response.setArea(side * side);
 
         return response;
     }
@@ -41,8 +47,15 @@ public class ShapeEndpoint {
     @ResponsePayload
     public RectangleAreaResponse rectangleArea(@RequestPayload RectangleAreaRequest request) {
 
+        double length = request.getLength();
+        double width = request.getWidth();
+
+        if (length < 0 || width < 0) {
+            throw new IllegalArgumentException("Length and Width must be non-negative");
+        }
+
         RectangleAreaResponse response = new RectangleAreaResponse();
-        response.setArea(request.getLength() * request.getWidth());
+        response.setArea(length * width);
 
         return response;
     }
@@ -52,8 +65,15 @@ public class ShapeEndpoint {
     @ResponsePayload
     public TriangleAreaResponse triangleArea(@RequestPayload TriangleAreaRequest request) {
 
+        double base = request.getBase();
+        double height = request.getHeight();
+
+        if (base < 0 || height < 0) {
+            throw new IllegalArgumentException("Base and Height must be non-negative");
+        }
+
         TriangleAreaResponse response = new TriangleAreaResponse();
-        response.setArea(0.5 * request.getBase() * request.getHeight());
+        response.setArea(0.5 * base * height);
 
         return response;
     }
@@ -63,8 +83,15 @@ public class ShapeEndpoint {
     @ResponsePayload
     public ParallelogramAreaResponse parallelogramArea(@RequestPayload ParallelogramAreaRequest request) {
 
+        double base = request.getBase();
+        double height = request.getHeight();
+
+        if (base < 0 || height < 0) {
+            throw new IllegalArgumentException("Base and Height must be non-negative");
+        }
+
         ParallelogramAreaResponse response = new ParallelogramAreaResponse();
-        response.setArea(request.getBase() * request.getHeight());
+        response.setArea(base * height);
 
         return response;
     }
