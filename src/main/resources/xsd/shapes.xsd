@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://example.com/shapetool"
-           xmlns:tns="http://example.com/shapetool"
-           elementFormDefault="qualified">
 
-    <!-- ================= CIRCLE ================= -->
+<xs:schema
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://example.com/shapetool"
+        xmlns:tns="http://example.com/shapetool"
+        elementFormDefault="qualified">
+
+    <!-- ========================================= -->
+    <!--               CIRCLE AREA                 -->
+    <!-- ========================================= -->
+
     <xs:element name="circleAreaRequest">
         <xs:complexType>
             <xs:sequence>
@@ -21,7 +26,10 @@
         </xs:complexType>
     </xs:element>
 
-    <!-- ================= SQUARE ================= -->
+    <!-- ========================================= -->
+    <!--               SQUARE AREA                 -->
+    <!-- ========================================= -->
+
     <xs:element name="squareAreaRequest">
         <xs:complexType>
             <xs:sequence>
@@ -38,7 +46,10 @@
         </xs:complexType>
     </xs:element>
 
-    <!-- ================= RECTANGLE ================= -->
+    <!-- ========================================= -->
+    <!--             RECTANGLE AREA                -->
+    <!-- ========================================= -->
+
     <xs:element name="rectangleAreaRequest">
         <xs:complexType>
             <xs:sequence>
@@ -56,7 +67,10 @@
         </xs:complexType>
     </xs:element>
 
-    <!-- ================= TRIANGLE ================= -->
+    <!-- ========================================= -->
+    <!--              TRIANGLE AREA                -->
+    <!-- ========================================= -->
+
     <xs:element name="triangleAreaRequest">
         <xs:complexType>
             <xs:sequence>
@@ -74,7 +88,10 @@
         </xs:complexType>
     </xs:element>
 
-    <!-- ================= PARALLELOGRAM ================= -->
+    <!-- ========================================= -->
+    <!--           PARALLELOGRAM AREA              -->
+    <!-- ========================================= -->
+
     <xs:element name="parallelogramAreaRequest">
         <xs:complexType>
             <xs:sequence>
